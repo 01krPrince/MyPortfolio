@@ -1,80 +1,43 @@
-(function () {
-    const link = document.querySelectorAll('nav > .hover-this');
-    const cursor = document.querySelector('.cursor');
-    const clickSound = document.getElementById('click-sound'); // Get the audio element
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav-wrapper a');
+    const header = document.querySelector('header');
 
-    const animateit = function (e) {
-        const span = this.querySelector('span');
-        const { offsetX: x, offsetY: y } = e,
-            { offsetWidth: width, offsetHeight: height } = this;
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetSectionId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetSectionId);
 
-        const move = 25;
-        const xMove = (x / width) * (move * 2) - move;
-        const yMove = (y / height) * (move * 2) - move;
+            if (targetSection) {
+                const headerHeight = header.offsetHeight;
 
-        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+                const sectionPosition = targetSection.offsetTop - headerHeight - 80;
 
-        if (e.type === 'mouseleave') span.style.transform = '';
-    };
-
-    const editCursor = e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    };
-
-    const playSound = () => {
-        if (clickSound) {
-            clickSound.currentTime = 0; // Reset the sound to the beginning
-            clickSound.play().catch(error => {
-                console.error("Audio play failed: ", error);
-            }); // Play the sound
-        }
-    };
-
-    link.forEach(b => {
-        b.addEventListener('mousemove', animateit);
-        b.addEventListener('mouseleave', animateit);
-        b.addEventListener('click', playSound); // Add event listener to play sound on link click
-    });
-
-    // Add event listener to the entire document for click events
-    document.addEventListener('click', playSound); // Play sound on any click in the document
-
-    window.addEventListener('mousemove', editCursor);
-})();
-
-
-// Smooth scrolling for links with 20px offset
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
-    link.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault(); // Prevent the default anchor behavior
-
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = window.pageYOffset + elementPosition - 180; // Scroll 180px above the target section
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth' // Smooth scrolling
-            });
-        }
+                window.scrollTo({
+                    top: sectionPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
 
-document.getElementById("downloadBtn").addEventListener("click", function () {
-    const portfolioCard = document.getElementById("portfolioCard");
+// JavaScript to display the current date and time
+function updateDateTime() {
+    const now = new Date();
+    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+    const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    document.getElementById('currentTime').innerText = now.toLocaleString('en-US', optionsTime);
+    document.getElementById('currentDate').innerText = now.toLocaleString('en-US', optionsDate);
+}
 
-    html2canvas(portfolioCard).then(canvas => {
-        const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = "prince_kumar_Portfolio_card.png"; // Specify the file name
-        link.click(); // Trigger the download
-    }).catch(error => {
-        console.error("Error generating image: ", error);
-        alert("Failed to generate image. Please try again.");
-    });
+updateDateTime(); // Initial call
+setInterval(updateDateTime, 1000); // Update every second
+
+
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });

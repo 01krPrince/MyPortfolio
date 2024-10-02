@@ -8,32 +8,30 @@
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-        #canvas {
-            display: none; /* Hide the canvas */
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 <body>
+    <div class="cursor"></div>
     <header class="bg-gray-200 hover:bg-gray-800 text-black">
-        Prince Kumar
-        <p class="typewriter">𝙸'𝚖 𝙿𝚛𝚒𝚗𝚌𝚎 𝙺𝚞𝚖𝚊𝚛, 𝚊 𝙵𝚞𝚕𝚕-𝚂𝚝𝚊𝚌𝚔 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚙𝚊𝚜𝚜𝚒𝚘𝚗𝚊𝚝𝚎 𝚊𝚋𝚘𝚞𝚝 𝚋𝚞𝚒𝚕𝚍𝚒𝚗𝚐 𝚠𝚎𝚋 𝚊𝚗𝚍 𝚖𝚘𝚋𝚒𝚕𝚎 𝚊𝚙𝚙𝚕𝚒𝚌𝚊𝚝𝚒𝚘𝚗𝚜.</p>
+        <span>Prince Kumar</span>
+        <p class="write">
+            𝙸'𝚖 𝙿𝚛𝚒𝚗𝚌𝚎 𝙺𝚞𝚖𝚊𝚛, 𝚊 𝙵𝚞𝚕𝚕-𝚂𝚝𝚊𝚌𝚔 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚙𝚊𝚜𝚜𝚒𝚘𝚗𝚊𝚝𝚎 𝚊𝚋𝚘𝚞𝚝 𝚋𝚞𝚒𝚕𝚍𝚒𝚗𝚐 𝚠𝚎𝚋 𝚊𝚗𝚍 𝚖𝚘𝚋𝚒𝚕𝚎 𝚊𝚙𝚙𝚕𝚊𝚝𝚒𝚘𝚗𝚜.
+        </p>
     </header>
 
     <div class="nav-wrapper">
         <nav>
-            <a href="html.html" class="hover-this" id="homeLink"><span>Home</span></a>
-            <a href="#skills" class="hover-this" id="skillsLink"><span>Skills</span></a>
-            <a href="#projects" class="hover-this" id="projectsLink"><span>Projects</span></a>
-            <a href="#contact" class="hover-this" id="contactLink"><span>Contact</span></a>
+            <a href="html.html" class="hover-this" id="homeLink"><div>Home</div></a>
+            <a href="#skills" class="hover-this" id="skillsLink"><div>Skills</div></a>
+            <a href="#projects" class="hover-this" id="projectsLink"><div>Projects</div></a>
+            <a href="#contact" class="hover-this" id="contactLink"><div>Contact</div></a>
         </nav>
-        <div class="cursor"></div>
     </div>
 
     <div class="sectionDiv">
-
-        <section id="skills" class="py-10" style="margin-top: 18%;">
-            <span class="hover-this">Skills</span>
+        <section id="skills" style="margin-top: 18%;">
+            <span>Skills</span>
             <div class="cursor"></div>
             <div class="grid-container">
                 <div><button>HTML</button></div>
@@ -61,63 +59,53 @@
             </div>
         </section>
 
-        <section id="contact" class="py-10 bg-gray-900" style="margin-top: 18%;">
+        <section id="contact" class="py-10 bg-gray-900 text-white" style="margin-top: 18%; font-family: 'Poppins', sans-serif;">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold text-white mb-4">Contact Us</h2>
-                    <a href="https://wa.me/916203594022?text=Hello%20I%20would%20like%20to%20connect%20with%20you." 
-                       class="text-blue-400 hover:text-blue-300 underline">
-                       <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-
-                    <a href="https://github.com/01krPrince"
-                    class="text-blue-400 hover:text-blue-300 underline" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                 </a>
-                 
-                <p class="text-gray-300 mb-4">
-                    <a href="mailto:princekr3006@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you." 
-                       class="text-blue-400 hover:text-blue-300 underline">
-                       princekr3006@gmail.com
-                    </a>
-                </p>
-                    <a href="https://www.instagram.com/its__lovf__er/" 
-                       class="text-blue-400 hover:text-blue-300 underline" target="_blank">
-                       <i class="fa-brands fa-instagram"></i>
-                    </a>
-                
-                    <a href="https://www.facebook.com/profile.php?id=100041602446843" 
-                       class="text-blue-400 hover:text-blue-300 underline" target="_blank">
-                       <i class="fa-brands fa-facebook"></i>
-                    </a>
+                <span>Contact</span><br>
+                <!-- Contact Card -->
+                <div id="contactCard" class="downloadBtn">
+                    <div class="card bg-gray-800 rounded-lg shadow-lg">
+                        <p class="cname">Prince Kumar</p>
+                        <p class="cPost mb-4">Full Stack Developer</p>
+                        <hr class="my-4 border-gray-600">
+                        <p class="cPhone text-gray-300 mb-3">📞 Phone: <a href="tel:+916203594022" class="text-blue-400 hover:underline">+91 62035 94022</a></p>
+                        <p class="cPhone text-gray-300 mb-3">✉️ Email: 
+                        <a href="mailto:princekr3006@gmail.com" class="text-blue-400 hover:underline">princekr3006@gmail.com</a></p>
+                        <p class="cPhone text-gray-300">🌐 Portfolio: <a href="your-portfolio-link" class="text-blue-400 hover:underline">Prince Kumar's Portfolio</a></p>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <div style="display: flex; align-items: center; text-align: center; justify-content: space-around; margin-top: 10%; gap: 20px; padding-right: 5%;">
-            <div class="card rounded-lg shadow-lg p-6" id="portfolioCard">
-                <h2 class="text-2xl font-bold text-white">Prince Kumar</h2>
-                <p class="text-lg font-semibold text-white">Full Stack Developer</p>
-                <hr class="my-4 border-gray-600">
-                <p class="text-gray-300">📞 Phone: <a href="tel:+9196203594022" class="text-blue-400 hover:underline">+91 62035 94022</a></p>
-                <p class="text-gray-300">✉️ Email: <a href="mailto:princekr3006@gmail.com" class="text-blue-400 hover:underline">princekr3006@gmail.com</a></p>
-                <p class="text-gray-300">🌐 Portfolio: <a href="your-portfolio-link" class="text-blue-400 hover:underline">Prince Kumar's Portfolio</a></p>
-            </div>
-
-            <div id="downloadBtn" class="text-gray-300 cursor-pointer">
-                <<>><<>>  Tap to download the Portfolio card &nbsp<<>><<>>
-            </div>
-        </div>
-        
     </div>
 
-    <footer class="bg-gray-200 text-center p-4 mt-4">
-        &copy; 2024 Prince Kumar. All rights reserved.
+    <footer class="footer bg-gray-800 text-white">
+        <div class="container text-center">
+            <p class="text-base">Prince Kumar's Portfolio</p>
+            <p>&copy; 2024 All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <audio id="click-sound" src="click-sound.mp3"></audio>
+    <div id="datetime">
+        <div class="time" id="currentTime"></div>
+        <div class="date" id="currentDate"></div>
+    </div>
 
-    <canvas id="canvas"></canvas>
-    <script src="js.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- Audio element for sound effect -->
+    <audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
 
+    <script src="logic.js"></script>
+    <script>
+        // Get the audio element
+        const clickSound = document.getElementById('clickSound');
+
+        // Function to play sound
+        function playClickSound() {
+            clickSound.currentTime = 0; // Rewind to the start
+            clickSound.play(); // Play the sound
+        }
+
+        // Add click event listener to the entire document
+        document.addEventListener('click', playClickSound);
+    </script>
 </body>
 </html>
