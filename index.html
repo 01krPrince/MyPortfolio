@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    
 </head>
 <body>
     <div class="cursor"></div>
@@ -32,7 +33,6 @@
     <div class="sectionDiv">
         <section id="skills" style="margin-top: 18%;">
             <span>Skills</span>
-            <div class="cursor"></div>
             <div class="grid-container">
                 <div><button>HTML</button></div>
                 <div><button>CSS</button></div>
@@ -64,18 +64,20 @@
                 <span>Contact</span><br>
                 <!-- Contact Card -->
                 <div id="contactCard" class="downloadBtn">
-                    <div class="card bg-gray-800 rounded-lg shadow-lg">
-                        <p class="cname">Prince Kumar</p>
+                    <div class="card bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg shadow-lg p-4" style="max-width: 600px; margin: auto; cursor: pointer;">
+                        <p class="cname text-xl font-bold">Prince Kumar</p>
                         <p class="cPost mb-4">Full Stack Developer</p>
                         <hr class="my-4 border-gray-600">
-                        <p class="cPhone text-gray-300 mb-3">📞 Phone: <a href="tel:+916203594022" class="text-blue-400 hover:underline">+91 62035 94022</a></p>
+                        <p class="cPhone text-gray-300 mb-3">📞 Phone: <a href="tel:+916203594022" class="text-blue-200 hover:underline">+91 62035 94022</a></p>
                         <p class="cPhone text-gray-300 mb-3">✉️ Email: 
-                        <a href="mailto:princekr3006@gmail.com" class="text-blue-400 hover:underline">princekr3006@gmail.com</a></p>
-                        <p class="cPhone text-gray-300">🌐 Portfolio: <a href="your-portfolio-link" class="text-blue-400 hover:underline">Prince Kumar's Portfolio</a></p>
+                        <a href="mailto:princekr3006@gmail.com" class="text-blue-200 hover:underline">princekr3006@gmail.com</a></p>
+                        <p class="cPhone text-gray-300">🌐 <a href="https://01krprince.github.io/MyPortfolio/" class="text-blue-200 cPhone cAttachment hover:underline">Portfolio Attachment</a></p>
+                        <i class="fas fa-download download-icon" onclick="downloadCard()"></i> <!-- Download icon -->
                     </div>
                 </div>
             </div>
         </section>
+        
     </div>
 
     <footer class="footer bg-gray-800 text-white">
@@ -90,22 +92,17 @@
         <div class="date" id="currentDate"></div>
     </div>
 
-    <!-- Audio element for sound effect -->
-    <audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
-
     <script src="logic.js"></script>
+
     <script>
-        // Get the audio element
-        const clickSound = document.getElementById('clickSound');
-
-        // Function to play sound
-        function playClickSound() {
-            clickSound.currentTime = 0; // Rewind to the start
-            clickSound.play(); // Play the sound
+        function downloadCard() {
+            const link = document.createElement('a');
+            link.href = 'contact-card.png'; // Replace with the path to your image
+            link.download = 'contact-card.png'; // Set the file name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
-
-        // Add click event listener to the entire document
-        document.addEventListener('click', playClickSound);
     </script>
 </body>
 </html>

@@ -22,7 +22,6 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 .cursor {
     position: fixed;
     width: 50px; /* Outer circle size */
@@ -50,8 +49,6 @@ header {
     font-family: 'Courier New', Courier, monospace;
     color: rgb(0, 0, 0);
     font-size: 1rem;
-    width: fit-content;
-    animation: typing 4s steps(100, end), blink-caret 0.75s step-end infinite;
     position: relative;
 }
 
@@ -89,34 +86,35 @@ div {
 .sectionDiv {
     margin-top: -50px;
     padding-top: 20px;
+    padding-bottom: 40px;
     align-items: center;
     justify-content: center;
     background-color: #161616;
     width: 100%;
-    height: auto; /* Changed to auto for flexibility */
+    height: auto;
     text-align: center;
 }
 
 .card {
     cursor: pointer;
-    padding: 1%;
+    padding: 2%; /* Increased padding for more space */
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    right: 25%;
     background: linear-gradient(135deg, #303030, #23262c);
     border-radius: 25px;
     color: #fff;
     margin: 20px auto;
-    width: 90%; /* Adjusted for responsiveness */
-    max-width: 500px;
+    width: 150%; /* Increased width of the card */
+    max-width: 600px; /* Increased max-width for larger cards */
 }
 
 .grid-container {
     cursor: pointer;
     margin-top: 5%;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding: 0 5%; /* Adjusted padding for better spacing */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted min-width */
     grid-template-rows: repeat(2, auto);
@@ -135,7 +133,7 @@ div {
     position: relative;
     outline: #a9a598 solid 4.5px;
     outline-offset: -15px;
-    box-shadow: 0 2px 5px rgba(212,175,55,0.5);
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.5);
     color: #b0b0b0;
     transition: all 0.3s ease;
 }
@@ -163,7 +161,7 @@ div {
     background-color: #c0bcaf;
     color: #000000;
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(212,175,55,0.6);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.6);
 }
 
 .grid-container div:hover button {
@@ -194,20 +192,27 @@ div {
 }
 
 .cPhone {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-family: Arial, sans-serif;
 }
 
+.cAttachment {
+    color: blue;
+}
+
 .downloadBtn {
-    width: 100%; /* Adjusted for responsiveness */
-    max-width: 650px; /* Set a max-width */
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
     background-color: #1a1a1a;
     color: #c9c5b6;
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 10px;
     font-family: 'Russo One', sans-serif;
 }
 
@@ -306,8 +311,64 @@ footer p {
         font-size: 1.2rem; /* Smaller text for grid items */
     }
 
+    #datetime {
+        font-size: 12px; /* Smaller font size for datetime */
+    }
+}
+
+/* Media Query for Screen Width Below 850px and Height Below 120px */
+@media (max-width: 850px) and (max-height: 120px) {
+    header {
+        font-size: 1rem; /* Very small header font */
+    }
+
+    .nav-wrapper {
+        display: none; /* Hide navigation if space is too small */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Very small grid items */
+    }
+
+    .card {
+        padding: 1%; /* Reduce card padding */
+        font-size: 0.8rem; /* Smaller card font */
+    }
+
+    .grid-container div {
+        font-size: 0.8rem; /* Smaller text for grid items */
+        padding: 5px; /* Less padding for grid items */
+    }
+
     .grid-container button {
-        font-size: 1.2rem; /* Smaller button text */
-        padding: 6px; /* Smaller padding */
+        font-size: 0.7rem; /* Smaller button text */
+        padding: 5px; /* Smaller padding */
+    }
+
+    footer p {
+        font-size: 0.8rem; /* Smaller footer font */
+    }
+
+    #datetime {
+        font-size: 10px; /* Smaller font size for datetime */
+        width: 50%; /* Smaller width for datetime */
+    }
+}
+
+
+/* Media Query for Card Styles Between 220px and 770px */
+@media (min-width: 220px) and (max-width: 770px) {
+    .card {
+        position: relative;
+        left: 3%;
+        padding: 5%; /* Adjust padding for smaller screens */
+        width: 90%; /* Adjust card width on smaller devices */
+        font-size: 1rem; /* Smaller font size for card text */
+        margin: 10px auto; /* Adjust margin for better spacing */
+        background: linear-gradient(135deg, #2c2c2c, #23262c); /* Slightly darker gradient for visibility */
+    }
+
+    .card:hover {
+        transform: scale(1.02); /* Slightly increase the hover effect */
     }
 }
