@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End-to-End Development Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            width: 400px;
+            max-width: 90%;
+            background: #1c1c1c;
+            color: white;
+            border-radius: 12px;
+            padding: 200px;
+            padding-left: 300px;
+            padding-right: 300px;
+            text-align: center;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+
+            h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 18px;
+            color: #bbb;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #444;
+            margin: 20px 0;
+        }
+        .contact {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .contact a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 10px;
+            color: #777;
+        }
+        .slogan {
+            font-size: 14px;
+            color: #3a3a3a;
+            margin-top: 10px;
+        }
+        .download-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+        .download-icon img {
+            width: 30px;
+            height: 30px;
+        }
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Prince Kumar</h1>
+        <h2>Full Stack Developer</h2>
+        <hr>
+        <div class="contact">
+            📞 <a href="https://wa.me/916203594022?text=Hello%20Prince%2C%20I%20would%20like%20to%20connect%20with%20you!" target="_blank">+91 62035 94022</a><br>
+            ✉️ <a href="mailto:princekr3006@gmail.com">princekr3006@gmail.com</a><br>
+            🌐 <a href="https://01krprince.github.io/MyPortfolio/" target="_blank">Portfolio</a>
+        </div>
+        <hr>
+        <div class="slogan">Full Stack Solutions,<br> End-to-End Development</div><br>
+        <div class="footer">© 2024 All Rights Reserved</div>
+
+        <!-- Download Icon -->
+        <div class="download-icon" onclick="downloadCard()">
+            <i class="fa-solid fa-download fa-beat"></i>
+        </div>
+    </div>
+
+</body>
+</html>
